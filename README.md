@@ -8,7 +8,7 @@ Files are deleted after 72 hours (can be adjusted), working like a temporary fil
 
 ## Installation / Configuration
 1. Set your upload directory in cronjob.php.
-2. Add a cronjob on your webserver user in SSH/terminal. Example:
+2. Open cronjob on your webserver using terminal/SSH:
 
 ```
 crontab -e -u www-data
