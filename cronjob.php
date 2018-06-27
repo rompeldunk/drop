@@ -1,17 +1,11 @@
 <?php
 
-/* Configuration: */
 
-// 1:  Define upload directory (absolute path needed for crontab)
+//  Define upload directory (absolute path needed for crontab)
 $dir = "/var/www/drop/upload/";
 
-// 2: Edit crontab on webserver. Use https://crontab.guru/ for help with crontime.
-// login@server:~# crontab -e -u www-data 
-// Example:    30 * * * * /usr/bin/php /var/www/drop/cronjob.php
 
-// 3: Remove comments before echo's to debug if needed.
-
-// Excluding the needed DirectoryList
+// Excluding files needed DirectoryList
 $exclusions = array($dir. 'index.php', $dir. 'resources');
 
 // cycle through all files in the directory
