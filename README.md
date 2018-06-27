@@ -10,10 +10,8 @@ Files are deleted after 72 hours (can be adjusted), working like a temporary fil
 
 ## Installation / Configuration
 
-Default upload-folder is ./upload, and has to be changed in upload.php - $target_dir.
-
-1. Define path to your upload directory in cronjob.php. (default is /upload.)
-2. Open cronjob on your webserver using terminal/SSH:
+1. Define upload folder in config.php. (Default is ./upload)
+2. Create a cronjob on your webserver through SSH/terminal:
 
 ```
 crontab -e -u www-data
@@ -21,15 +19,10 @@ crontab -e -u www-data
 
 Add this line for check every 30 min:
 ```
-30 * * * * /usr/bin/php /var/www/drop/cronjob.php
+*/30 * * * * /usr/bin/php /var/www/drop/cronjob.php
 ```
 
-Path to php can be found by ```whereis php``` and **must** be in absolute path to work with crontab. If you're new to crontab, see https://crontab.guru/.
-
-
-
-## Debug
-To check that the files are getting deleted, uncomment the "echo"-lines in cronjob.php and run it in your browser.
+Path to php can be found by ```whereis php``` and **must be in absolute path** to work with crontab. To check at other time interval, see https://crontab.guru/ for an easy reference.
 
 
 

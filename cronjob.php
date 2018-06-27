@@ -15,11 +15,11 @@ foreach (glob($dir."*") as $file) {
       continue;
   }
 
-/*** if file is 72 hours (259200 seconds) old then delete it ***/
+/*** If file is older than ($timeout) seconds, delete it ***/
 
-if(time() - filectime($file) > 259200){
+if(time() - filectime($file) > $timeout){
 
-    $timeleft = (time() - filectime($file)) - 259200;
+    $timeleft = (time() - filectime($file)) - $timeout;
     $hours = floor(-$timeleft / 3600);
     $mins = floor(-$timeleft / 60 % 60);
     $secs = floor(-$timeleft % 60);

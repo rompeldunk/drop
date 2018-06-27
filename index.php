@@ -1,4 +1,7 @@
 <!doctype html>
+
+<?php include 'config.php'; ?>
+
 <html>
     <head>
         <title>DropZone guleWeb</title>
@@ -33,7 +36,7 @@
 
             <div id="browse" class="centerme">
                 <a href="./upload"><button class="button2 button ">Browse exisiting files</button></a>
-                <p class="smallnote">Note: All files are deleted after 72 hours</p>
+                <p class="smallnote">Note: All files are deleted after <?php echo $timeout/3600; ?> hours</p>
             </div>
 
 
@@ -49,7 +52,7 @@
             var text = "";
             var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-            for (var i = 0; i < 5; i++)
+            for (var i = 0; i < 7; i++)
               text += possible.charAt(Math.floor(Math.random() * possible.length));
 
             return text;
