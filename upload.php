@@ -1,5 +1,5 @@
 <?php
-$target_dir = "upload/"; // Upload directory
+
 include 'config.php';
 
 $request = 1;

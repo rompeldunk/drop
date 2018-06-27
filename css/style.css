@@ -5,7 +5,7 @@ body, input {
 
 }
 
-.centerme{
+.centerme {
 	text-align: center;
 	padding: 5%;
 
@@ -17,7 +17,7 @@ body, input {
 }
 
 .margin-top {
-	50px;
+	margin-top: 50px;
 }
 
 .container {

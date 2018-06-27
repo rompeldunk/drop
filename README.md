@@ -36,7 +36,7 @@ To check that the files are getting deleted, uncomment the "echo"-lines in cronj
 ## Planned features
 - [X] Multiple fileupload with unique share-link
 - [ ] Better CSS-styling on dropzone
-- [ ] Make own config.php file
+- [X] Make own config.php file
 - [ ] Publish demo-site
 - [ ] Scramble fileshare-path without using database
 - [ ] Option for hiding uploaded file in DirectoryList browser
