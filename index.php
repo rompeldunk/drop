@@ -29,7 +29,7 @@
                   <img class="" src="assets/official_logo.png" width="45px">
               </div>
 
-            <form action="upload.php" class="dropzone button1 button" id="myAwesomeDropzone">
+            <form action="upload.php" class="dropzone button1 drop-zone-fix" id="myAwesomeDropzone">
             </form>
 
             <div id="information" class="centerme"></div>

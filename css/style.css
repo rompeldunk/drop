@@ -106,6 +106,12 @@ body, input {
 
 }
 
+.drop-zone-fix {
+  transition-duration: 0.4s;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+}
+
 .button1 {
     background-color: white;
     color: black;
