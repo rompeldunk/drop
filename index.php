@@ -115,8 +115,9 @@
 
 
               var input = document.createElement('input');
+              
               input.setAttribute('type', "text");
-              input.setAttribute('value',"https://guleweb.com/drop/upload/" + file.name);
+              input.setAttribute('value', window.location.href + "/upload/" + file.name);
               input.setAttribute('id',"dlink" + file.name);
               input.setAttribute('readonly',"");
 
