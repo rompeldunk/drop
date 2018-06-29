@@ -2,7 +2,7 @@
 Create your own fileshare service on your local webserver. Files are deleted after 72 hours.
 
 ## Demo:
-http://demo.mogieb.net
+http://drop.mogieb.net
 
 
 ## About
