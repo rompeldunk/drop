@@ -1,6 +1,9 @@
 # DropZone + DirectoryList
 Create your own fileshare service on your local webserver. Files are deleted after 72 hours.
 
+## Demo:
+http://demo.mogieb.net
+
 
 ## About
 Combining [DropZone.js](https://github.com/enyo/dropzone), [DirectoryLister](https://github.com/DirectoryLister/DirectoryLister) and PHP, you can setup your own fileservice (ala files.fm) to upload and browse files and share link to friends or to your own use.
@@ -28,12 +31,11 @@ Path to php can be found by ```whereis php``` and **must be in absolute path** t
 
 ## Planned features
 - [X] Multiple fileupload with unique share-link
-- [ ] Better CSS-styling on dropzone
+- [X] Better CSS-styling on dropzone
 - [X] Make own config.php file
-- [ ] Publish demo-site
+- [X] Publish demo-site
 - [ ] Scramble fileshare-path without using database
 - [ ] Option for hiding uploaded file in DirectoryList browser
-
 
 
 ## Licence:
