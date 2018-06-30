@@ -117,16 +117,16 @@
               var input = document.createElement('input');
               
               input.setAttribute('type', "text");
-              input.setAttribute('value', window.location.href + "/upload/" + file.name);
+              input.setAttribute('value', window.location.href + "upload/" + file.name);
               input.setAttribute('id',"dlink" + file.name);
               input.setAttribute('readonly',"");
 
               var button = document.createElement('button');
-              //button.setAttribute('onclick', "myFunction(dlink" + file.name + ")");
+              
               button.addEventListener('click', function(){
                   myFunction("dlink" + file.name);
               });
-              //button.setAttribute('onmouseout', "outFunc(dlink" + file.name + ")");
+              
               button.addEventListener('mouseout', function(){
                   outFunc("myTooltip" + file.name);
               });
