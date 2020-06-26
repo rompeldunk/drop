@@ -12,7 +12,7 @@
 
         <!-- CSS -->
         <link href="css/dropzone.css" rel="stylesheet" type="text/css">
-    		<link href="css/style.css" rel="stylesheet" type="text/css">
+    	<link href="css/style.css" rel="stylesheet" type="text/css">
 
         <!-- Script -->
         <script src='js/jquery-3.2.1.min.js'></script>
@@ -37,6 +37,11 @@
             <div id="browse" class="centerme">
                 <a href="./upload"><button class="button2 button ">Browse exisiting files</button></a>
                 <p class="smallnote">Note: All files are deleted after <?php echo $timeout/3600; ?> hours</p>
+            </div>
+
+            <div class="centerme">
+                <a href="./delete"><button class="button3 button ">Delete exisiting files</button></a>
+                <p class="smallnote">Warning: Deletes ALL files</p>
             </div>
 
 

@@ -23,7 +23,7 @@ if(time() - filectime($file) > $timeout){
     $hours = floor(-$timeleft / 3600);
     $mins = floor(-$timeleft / 60 % 60);
     $secs = floor(-$timeleft % 60);
-    
+
     if ($debug) {
       echo "Deleting file: " . $file . ". Older than 72 hours.<br>";
     }
@@ -32,7 +32,7 @@ if(time() - filectime($file) > $timeout){
     }
 
     else {
-      
+
       if ($debug) {
         echo "Not deleting: ". $file . " Time left: =>  ". $hours . "h " .$mins. "m " . $secs . "s  <br>";
       }
