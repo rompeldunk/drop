@@ -63,9 +63,8 @@ if($request == 2){
 
 	$folderPath = dirname($filePath);
 
-	// Also deletes folder if private
+	// Check that the folderPath is not public
 	if (strpos($folderPath, $public_upload_dir) !== false) {
-		// Found!
 		exit;
 	}
 	else {

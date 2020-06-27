@@ -80,7 +80,7 @@
         // Dropzone script
         Dropzone.autoDiscover = false;
         $(".dropzone").dropzone({
-            headers: { scramble: makeid() },
+            // headers: { scramble: makeid() },
             addRemoveLinks: true,
             removedfile: function(file) {
                 const res = JSON.parse(file.xhr.response);
@@ -106,8 +106,6 @@
 
               var div = document.createElement('div');
               div.setAttribute('class', "input-group tooltip");
-
-
 
               var img = document.createElement('img');
               img.setAttribute('src', "assets/clippy.svg");
