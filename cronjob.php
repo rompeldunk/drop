@@ -25,7 +25,7 @@ if(time() - filectime($file) > $timeout){
     $secs = floor(-$timeleft % 60);
 
     if ($debug) {
-      echo "Deleting file: " . $file . ". Older than 72 hours.<br>";
+      echo "Deleting file: " . $file . ". Older than " . $hours . " hours.<br>";
     }
 
       unlink($file);

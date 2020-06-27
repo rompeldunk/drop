@@ -12,7 +12,7 @@
 
         <!-- CSS -->
         <link href="css/dropzone.css" rel="stylesheet" type="text/css">
-    	<link href="css/style.css" rel="stylesheet" type="text/css">
+    	 <link href="css/style.css" rel="stylesheet" type="text/css">
 
         <!-- Script -->
         <script src='js/jquery-3.2.1.min.js'></script>
@@ -40,7 +40,7 @@
             </div>
 
             <div class="centerme">
-                <a href="./delete"><button class="button3 button ">Delete exisiting files</button></a>
+                <a href="./delete"><button class="button3 button ">Delete public files</button></a>
                 <p class="smallnote">Warning: Deletes ALL files</p>
             </div>
 
@@ -52,7 +52,6 @@
         <!-- Script -->
         <script type='text/javascript'>
 
-
         function makeid() {
             var text = "";
             var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -61,11 +60,9 @@
               text += possible.charAt(Math.floor(Math.random() * possible.length));
 
             return text;
-          }
+        }
 
-          console.log(makeid());
-
-        function myFunction(id) {
+        function copyToClipboard(id) {
           var copyText = document.getElementById(id);
           copyText.select();
           document.execCommand("copy");
@@ -74,7 +71,7 @@
           tooltip.innerHTML = "Copied! =) " ;
         }
 
-        function outFunc(id) {
+        function showToolTip(id) {
           var tooltip = document.getElementById(id);
           tooltip.innerHTML = "Copy to clipboard";
         }
@@ -83,16 +80,18 @@
         // Dropzone script
         Dropzone.autoDiscover = false;
         $(".dropzone").dropzone({
+            headers: { scramble: makeid() },
             addRemoveLinks: true,
             removedfile: function(file) {
-                var name = file.name;
+                const res = JSON.parse(file.xhr.response);
+                console.log(res);
 
                 $.ajax({
                     type: 'POST',
                     url: 'upload.php',
-                    data: {name: name,request: 2},
-                    sucess: function(data){
-                        console.log('success: ' + data);
+                    data: { request: 2, filePath: res.filePath },
+                    success: function(data){
+                        console.log('Deleted OK');
                     }
                 });
                 var _ref;
@@ -101,6 +100,9 @@
             },
 
             success: function(file) {
+
+              const response = JSON.parse(file.xhr.response);
+              console.log(response);
 
               var div = document.createElement('div');
               div.setAttribute('class', "input-group tooltip");
@@ -122,18 +124,18 @@
               var input = document.createElement('input');
               
               input.setAttribute('type', "text");
-              input.setAttribute('value', window.location.href + "upload/" + file.name);
+              input.setAttribute('value', window.location.href + response.filePath);
               input.setAttribute('id',"dlink" + file.name);
               input.setAttribute('readonly',"");
 
               var button = document.createElement('button');
               
               button.addEventListener('click', function(){
-                  myFunction("dlink" + file.name);
+                  copyToClipboard("dlink" + file.name);
               });
               
               button.addEventListener('mouseout', function(){
-                  outFunc("myTooltip" + file.name);
+                  showToolTip("myTooltip" + file.name);
               });
               button.setAttribute('class', "button button1");
               button.innerHTML = 'Copy Link';

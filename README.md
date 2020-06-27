@@ -1,5 +1,5 @@
 # DropZone + DirectoryList
-Create your own (temporary) fileshare  service on your local webserver. Files are deleted after 72 hours.
+Create your own (temporary) fileshare  service on your local webserver. Files are deleted after 72 hours (adjustable).
 
 ## Demo:
 http://drop.mogieb.net
@@ -34,8 +34,8 @@ Path to php can be found by ```whereis php``` and **must be in absolute path** t
 - [X] Better CSS-styling on dropzone
 - [X] Make own config.php file
 - [X] Publish demo-site
-- [ ] Scramble fileshare-path without using database
-- [ ] Option for hiding uploaded file in DirectoryList browser
+- [X] Scramble fileshare-path without using database
+- [X] Option for hiding uploaded file in DirectoryList browser (private as above)
 
 
 ## Licence:
