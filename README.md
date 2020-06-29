@@ -11,7 +11,7 @@ Combining [DropZone.js](https://github.com/enyo/dropzone), [DirectoryLister](htt
 Files can deleted after 12 hours (adjust to your need), working like a temporary file sharing service, keeping your upload folder clean after usage.
 
 ## Prerequisites
-* > PHP5
+* PHP5
 * Cron
 
 ## Installation / Configuration
