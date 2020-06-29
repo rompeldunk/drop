@@ -7,10 +7,12 @@
 include '../config.php';
 
 // Excluding files needed DirectoryList
-$exclusions = array($dir. 'index.php', $dir. 'resources');
+$exclusions = array($dir_public. 'index.php', $dir_public. 'resources');
+
+$count = 0;
 
 // Cycle through all files in the directory
-foreach (glob($dir."*") as $file) {
+foreach (glob($dir_public."*") as $file) {
 
     if (in_array($file, $exclusions)) {
         if ($debug) {
@@ -18,10 +20,13 @@ foreach (glob($dir."*") as $file) {
         }
         continue;
     }
-
+    
     unlink($file);
+    ++$count;
 
 }
+
+echo $count;
 
 ?>
 

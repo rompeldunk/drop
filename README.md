@@ -8,7 +8,7 @@ http://drop.mogieb.net
 ## About
 Combining [DropZone.js](https://github.com/enyo/dropzone), [DirectoryLister](https://github.com/DirectoryLister/DirectoryLister) and PHP, you can setup your own fileservice (ala files.fm) to upload and browse files and share link to friends or to your own use.
 
-Files can deleted after 72 hours (adjust to your need), working like a temporary file sharing service, keeping your upload folder clean after usage.
+Files can deleted after 12 hours (adjust to your need), working like a temporary file sharing service, keeping your upload folder clean after usage.
 
 
 ## Installation / Configuration

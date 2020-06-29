@@ -11,13 +11,28 @@ body, input {
 
 }
 
+.outside {
+  position: relative;
+  top: 220px; 
+  margin: auto 0;
+}
+
+.outside:hover {
+  color:black;
+}
+
+.flexme {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .smallnote{
 	margin-top: 30px;
 	font-size: 0.7em;
 }
 
 .margin-top {
-	margin-top: 50px;
+  margin-top: 5vh;
 }
 
 .container {
@@ -50,6 +65,10 @@ body, input {
     font-size: 28px;
 }
 
+
+.center-form {
+  text-align: center;
+}
 
 .tooltip {
   position: relative;
@@ -145,14 +164,26 @@ body, input {
   color: white;
 }
 
+.button4 {
+  background-color: white;
+  color: black;
+  border: 2px solid #3ca198;
+}
+
+.button4:hover {
+  background-color: #3ca198;
+  color: white;
+}
+
 input[type="text"] {
-		font-size: 20px;
+		font-size: 14px;
 		text-align: center;
 		width: 100%;
     display: block;
     margin-bottom: 10px;
 		outline: none;
-		box-shadow: none;
+    box-shadow: none;
+    width: 
 }
 
 .icon {

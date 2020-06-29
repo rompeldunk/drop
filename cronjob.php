@@ -3,11 +3,12 @@
 include 'config.php';
 
 // Excluding files needed DirectoryList
-$exclusions = array($dir. 'index.php', $dir. 'resources');
+$exclusions = array($dir_public. 'index.php', $dir_public. 'resources');
 
-// Cycle through all files in the directory
-foreach (glob($dir."*") as $file) {
+// Cycle through all files in the public directory
+foreach (glob($dir_public."*") as $file) {
 
+  // Ignores exclusions
   if (in_array($file, $exclusions)) {
       if ($debug) {
         echo "ignoring => " . $file . "<br>";
@@ -38,6 +39,5 @@ if(time() - filectime($file) > $timeout){
       }
     }
 }
-
 
 ?>

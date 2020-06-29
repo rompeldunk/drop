@@ -5,17 +5,19 @@ include 'funcs.php';
 
 // Check for remove file request
 $request = 1;
-if(isset($_POST['request'])){
+if (isset($_POST['request'])) {
 	$request = $_POST['request'];
 }
 
-$headers = getRequestHeaders();
 
-// Retrieve 
-foreach ($headers as $header => $value) {
-	if ($header === "Scramble") {
-		$scramble = "$value/";
-	}
+if (isset($_POST['private']) && $_POST['private'] === "on") {
+	// Genrate secure random 10-char-string
+	$scramble = random_str(10) . "/";
+}
+
+// for debug:
+foreach ($_POST as $key => $value) {
+	$debug .= "Field " . htmlspecialchars($key) . " is " . htmlspecialchars($value) . "<br>";
 }
 
 // Default to public
@@ -33,19 +35,19 @@ if (isset($scramble)) {
 
 
 // Upload file
-if($request == 1){
+if ($request == 1) {
 
-	$target_file = $target_dir.$_FILES['file']['name'];
+	$target_file = $target_dir . $_FILES['file']['name'];
 
-	$response = (object)[];
+	$response = (object) [];
 	if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
-		$response = (object) [	
+		$response = (object) [
 			'msg' => "Successfully uploaded",
 			'status' => 200,
-			'filePath' => $target_file
+			'filePath' => $target_file,
+			'debug' => $debug
 		];
-	}
-	else{
+	} else {
 		$response->msg = "Error while uploading";
 		$response->status = 500;
 	}
@@ -54,8 +56,8 @@ if($request == 1){
 }
 
 // Remove file + folder (if private)
-if($request == 2){
-	if(isset($_POST['filePath'])){
+if ($request == 2) {
+	if (isset($_POST['filePath'])) {
 		$filePath = $_POST['filePath'];
 	}
 
@@ -66,11 +68,9 @@ if($request == 2){
 	// Check that the folderPath is not public
 	if (strpos($folderPath, $public_upload_dir) !== false) {
 		exit;
-	}
-	else {
+	} else {
 		rmdir($folderPath);
 	}
-	
+
 	exit;
 }
-

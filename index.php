@@ -26,24 +26,36 @@
             <div class='content'>
 
               <div class="centerme margin-top">
-                  <img class="" src="assets/official_logo.png" width="45px">
+                  <img src="assets/official_logo.png" width="45px">
               </div>
 
             <form action="upload.php" class="dropzone button1 drop-zone-fix" id="myAwesomeDropzone">
+              <input type="hidden" id="hiddenField" name="private" value="on"/>
+              <div class="center-form">
+                <label>Private share</label>
+                <input type="checkbox" id="checkboxId" onclick="getValueInput();" checked />
+              </div>
             </form>
+            
+            
 
             <div id="information" class="centerme"></div>
 
+
             <div id="browse" class="centerme">
-                <a href="./upload"><button class="button2 button ">Browse exisiting files</button></a>
-                <p class="smallnote">Note: All files are deleted after <?php echo $timeout/3600; ?> hours</p>
+                <a href="./upload"><button class="button2 button ">Browse public files</button></a>
+                <p class="smallnote">All public files are automatically purged after <?php echo $timeout/3600; ?> hours
+               </p>
             </div>
 
-            <div class="centerme">
-                <a href="./delete"><button class="button3 button ">Delete public files</button></a>
-                <p class="smallnote">Warning: Deletes ALL files</p>
+            <div class="flexme">
+              <div>
+                <a href="./delete_public"><button class="button3 button ">Purge public</button></a>
+              </div>
+              <div>
+                <a href="./delete_private"><button class="button4 button ">Purge private</button></a>
+              </div>
             </div>
-
 
           </div>
 
@@ -52,14 +64,10 @@
         <!-- Script -->
         <script type='text/javascript'>
 
-        function makeid() {
-            var text = "";
-            var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-            for (var i = 0; i < 7; i++)
-              text += possible.charAt(Math.floor(Math.random() * possible.length));
-
-            return text;
+        function getValueInput(){
+            var bool = document.getElementById("checkboxId").checked;
+            document.getElementById("hiddenField").value = bool ? "on" : "off";
         }
 
         function copyToClipboard(id) {
@@ -76,11 +84,9 @@
           tooltip.innerHTML = "Copy to clipboard";
         }
 
-
         // Dropzone script
         Dropzone.autoDiscover = false;
         $(".dropzone").dropzone({
-            // headers: { scramble: makeid() },
             addRemoveLinks: true,
             removedfile: function(file) {
                 const res = JSON.parse(file.xhr.response);
@@ -100,6 +106,8 @@
             },
 
             success: function(file) {
+
+              console.log(file);
 
               const response = JSON.parse(file.xhr.response);
               console.log(response);
