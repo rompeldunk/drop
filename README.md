@@ -1,5 +1,5 @@
 # DropZone + DirectoryList
-Create your own (temporary) fileshare  service on your local webserver. Files are deleted after 72 hours (adjustable).
+Create your own (temporary) fileshare  service on your local webserver. Files are deleted after 72 hours (adjustable), or/and can be set to random paths for private uplaods.
 
 ## Demo:
 http://drop.mogieb.net
