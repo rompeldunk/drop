@@ -31,10 +31,10 @@
 
             <form action="upload.php" class="dropzone button1 drop-zone-fix" id="myAwesomeDropzone">
               <input type="hidden" id="hiddenField" name="private" value="on"/>
-              <div class="center-form">
-                <label>Private share</label>
-                <input type="checkbox" id="checkboxId" onclick="getValueInput();" checked />
-              </div>
+
+              <!-- Eye checkbox -->
+              <div id="eyeBox" class="checkbox eyeBoxClass" onclick="setCheckValue();" value="on" ></div>
+
             </form>
             
             
@@ -50,10 +50,10 @@
 
             <div class="flexme">
               <div>
-                <a href="./delete_public"><button class="button3 button ">Purge public</button></a>
+                <a href="./lib/purge_public.php"><button class="button3 button ">Purge public</button></a>
               </div>
               <div>
-                <a href="./delete_private"><button class="button4 button ">Purge private</button></a>
+                <a href="./lib/purge_private.php"><button class="button4 button ">Purge private</button></a>
               </div>
             </div>
 
@@ -64,10 +64,14 @@
         <!-- Script -->
         <script type='text/javascript'>
 
+        function setCheckValue(){
+            const el = document.getElementById("hiddenField");
+            const eyeBox = document.getElementById("eyeBox");
 
-        function getValueInput(){
-            var bool = document.getElementById("checkboxId").checked;
-            document.getElementById("hiddenField").value = bool ? "on" : "off";
+            eyeBox.classList.toggle("checked");
+            
+            el.value = el.value === "on" ? "off" : "on";
+            console.log(el.value);
         }
 
         function copyToClipboard(id) {
@@ -83,6 +87,13 @@
           var tooltip = document.getElementById(id);
           tooltip.innerHTML = "Copy to clipboard";
         }
+
+
+        // var button = document.createElement('button');
+        // const eyeBox = document.getElementById("eyeBox");
+        // eyeBox.addEventListener('mouseover', function(){
+        //   eyeBox.innerHTML = "Toggle for public/private upload";
+        // });
 
         // Dropzone script
         Dropzone.autoDiscover = false;

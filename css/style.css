@@ -67,7 +67,7 @@ body, input {
 
 
 .center-form {
-  text-align: center;
+  margin: 0 auto;
 }
 
 .tooltip {
@@ -183,7 +183,6 @@ input[type="text"] {
     margin-bottom: 10px;
 		outline: none;
     box-shadow: none;
-    width: 
 }
 
 .icon {
@@ -191,4 +190,25 @@ input[type="text"] {
   /* Adjust these values accordingly */
   top: 5px;
   left: 5px;
+}
+
+.eyeBoxClass {
+  margin: 0 0 0 auto;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+}
+
+.eyeBoxClass:hover {
+  border: 2px solid black;
+  border-radius: 50%;
+}
+
+.checkbox {
+  background: transparent url(../assets/visibility_off_24px.svg) no-repeat 0 50%;
+}
+
+.checked {
+  background: transparent url(../assets/visibility_24px.svg ) no-repeat 80% 50%;
 }

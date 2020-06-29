@@ -1,7 +1,7 @@
 <?php
 
 include 'config.php';
-include 'funcs.php';
+include './lib/funcs.php';
 
 // Check for remove file request
 $request = 1;

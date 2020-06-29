@@ -5,7 +5,7 @@
 <?php
 
 include '../config.php';
-include '../funcs.php';
+include './funcs.php';
 
 // Cycle through all files in the directory
 foreach (glob($dir_private."*") as $file) {
