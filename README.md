@@ -36,7 +36,7 @@ Path to php can be found by ```whereis php``` and **must be in absolute path** t
 - [X] Publish demo-site
 - [X] Scramble fileshare-path without using database
 - [X] Option for hiding uploaded file in DirectoryList browser (private as above)
-- [] Cleanup private shares with cronjob
+- [ ] Cleanup private shares with cronjob
 
 
 ## Licence:
